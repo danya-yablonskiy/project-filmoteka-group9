@@ -1,0 +1,53 @@
+body {
+    background-color: $background-white-color;
+  }
+
+  /* Щоб не було випадання */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Щоб не було зайвих відступів */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+.list {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+  }
+
+
+.container {
+    min-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+  
+    @media screen and (min-width: 480px) {
+      width: 480px;
+    }
+  
+    @media screen and (min-width: 768px) {
+      width: 768px;
+      padding: 34px;
+    }
+  
+    @media screen and (min-width: 1280px) {
+      width: 1280px;
+      padding: 34px;
+    }
+  }
