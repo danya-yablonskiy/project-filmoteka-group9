@@ -5,5 +5,5 @@ export const pathParams = {
   API_KEY: '0b0c22042155193a7073ae89a4562c2a',
   media_type: 'movie',
   time_window: 'week',
-  per_page: 30,
+
 }
