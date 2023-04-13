@@ -1,4 +1,8 @@
 @import './base/common';
+
 // Я забув як додати через @font-face, тому зробив так o_O
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
+@import './base/variables';
+@import './base/base';
+@import './components/footer';
