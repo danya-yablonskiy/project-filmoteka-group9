@@ -69,6 +69,3 @@ export const renderFilmWatch = () => {
     const renderFilms = savedWatchFilm.map(film => console.log(film));
 }
     
-
-
-
