@@ -2,6 +2,12 @@
 const STORAGE_KEY_WATCH = 'save-watch';
 const STORAGE_KEY_QUEUE = 'save-queue';
 
+//Вставити у модалку
+//import { saveLocalStorageWatch } from "./js/localStorage";
+//import { saveLocalStorageQueue } from "./js/localStorage";
+
+// button1.addEventListener('click', saveLocalStorageWatch);
+// button2.addEventListener('click', saveLocalStorageQueue);
 
 
 
@@ -55,13 +61,14 @@ export const saveLocalStorageQueue = (event) => {
     localStorage.setItem(STORAGE_KEY_QUEUE, JSON.stringify(arrFilmQueue));
 };
 
-const renderFilmWatch = () => {
+export const renderFilmWatch = () => {
     //почистити контейнер
+    // container.innerHTML = '';
+    //
     const savedWatchFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
-    const renderFilms = savedWatchFilm.map(film => `
-    
-    `)
+    const renderFilms = savedWatchFilm.map(film => console.log(film));
 }
+    
 
 
 
