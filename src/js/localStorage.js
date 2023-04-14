@@ -1,4 +1,4 @@
-
+import Notiflix from "notiflix";
 const STORAGE_KEY_WATCH = 'save-watch';
 const STORAGE_KEY_QUEUE = 'save-queue';
 
@@ -24,8 +24,8 @@ export const saveLocalStorageWatch = (event) => {
     console.log(film)
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         arrFilmsWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
-        if (arrFilmsWatch.find(filmWatch => filmWatch.id === film.id)) {            
-            console.log('Вже є такий фільм у Watch')
+        if (arrFilmsWatch.find(filmWatch => filmWatch.id === film.id)) {             
+            Notiflix.Notify.failure('Вже є такий фільм у Watch')
             return;
         }
         arrFilmsWatch.push(film);
@@ -49,8 +49,8 @@ export const saveLocalStorageQueue = (event) => {
     console.log(film)
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         arrFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
-        if (arrFilmQueue.find(filmQueue => filmQueue.id === film.id)) {            
-            console.log('Вже є такий фільм у Queue')
+        if (arrFilmQueue.find(filmQueue => filmQueue.id === film.id)) {             
+            Notiflix.Notify.failure('Вже є такий фільм у Queue')
             return;
         }
         arrFilmQueue.push(film);
