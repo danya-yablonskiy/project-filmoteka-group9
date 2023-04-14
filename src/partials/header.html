@@ -1,24 +1,36 @@
 <header class="page-header">
-  <div class="container header-container">
-    <div class="button-box">
-      <button type="button" class="button button-home">Home</button>
-      <button type="button" class="button button-library">My library</button>
-    </div>
-    <form id="search-form" class="search-form">
-      <div class="search-box">
-        <input
-          type="text"
-          class="search-form__input"
-          placeholder="Movie search"
-        />
-        <button type="submit" class="search-form__button">
-          <i class="fa fa-search"></i>
-        </button>
+  <div class="container">
+    <div class="header-container">
+      <div class="nav-box">
+        <div class="button-box">
+          <button type="button" class="button button-home">Home</button>
+          <button type="button" class="button button-library">
+            My library
+          </button>
+        </div>
+        <form id="search-form" class="search-form">
+          <div class="search-box">
+            <input
+              type="text"
+              class="search-form__input"
+              placeholder="Movie search"
+            />
+            <button type="submit" class="search-form__button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
-
-    <a href="/" class="logo header-logo">
-      <span class="logo-text">Filmoteka</span>
-    </a>
+      <a href="/" class="logo header-logo">
+        <svg class="logo-img" width="32" height="32">
+          <use href="./images/symbol-defs.svg#icon-logo"></use>
+        </svg>
+        <span class="logo-text">Filmoteka</span>
+      </a>
+      <div class="library-button-box">
+        <button class="button button__library">Watched</button>
+        <button class="button button__library">Queue</button>
+      </div>
+    </div>
   </div>
 </header>
