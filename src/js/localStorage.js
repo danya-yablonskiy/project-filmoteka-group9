@@ -1,17 +1,20 @@
+import fetchPopularMovies from "./fetchPopularMovies";
 const STORAGE_KEY_WATCH = 'save-watch';
 const STORAGE_KEY_QUEUE = 'save-queue';
-let arrFilmsWatch = [];
+
 let arrFilmQueue = [];
 
 
 export const saveLocalStorageWatch = (film) => {
-   
+   let arrFilmsWatch = [];
     if (arrFilmsWatch.find(films => films.id === film.id)) {
         console.log('Однаковий id');
         return;
     }
+    
     arrFilmsWatch.push(film);
-    localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrFilmsWatch));
+    console.log(arrFilmsWatch);
+    // localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrFilmsWatch));
 };
 
 export const saveLocalStorageQueue = (film) => {
@@ -24,8 +27,10 @@ export const saveLocalStorageQueue = (film) => {
 };
 
 const renderFilmWatch = () => {
+    //почистити контейнер
     const savedWatchFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
-
+    const renderFilms = savedWatchFilm.map(film => `
+    
+    `)
 }
 
-//${BASE_URL}/search/${media_type}?api_key=0b0c22042155193a7073ae89a4562c2a&language=en-US&query=${name}
