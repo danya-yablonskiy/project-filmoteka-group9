@@ -1,0 +1,56 @@
+.button{
+    font-family: 'Roboto';
+     
+    font-weight: 500;
+        font-size: 12px;
+        line-height: 1.2;
+    
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+    
+        color: #000000;
+        
+        background: #FFFFFF;
+        border-radius: 100px;
+        border: none;
+        padding: 10px 22px;
+
+        &:not(:last-child){
+            margin-right: 4px;
+        }
+        &:active{
+            background: #000000;
+            color: #FFFFFF;
+        }
+}
+.button-box{
+    display: flex;
+    margin-bottom: 8px;
+    padding-left: 14px;
+    padding-top: 14px;
+}
+.search-form{
+    position: relative;
+}
+.search-form__button{
+    
+    position: absolute;
+    top: 0;
+    right: 12px;
+    z-index: 10;
+    width: 50px;
+    
+    cursor: pointer;
+    
+    background: none;
+    
+    color:black;
+            
+    line-height: 34px;
+   border: none;
+}
+.fa-search::before {
+    content: "\f002";
+}
