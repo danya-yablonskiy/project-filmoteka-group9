@@ -1,25 +1,54 @@
-import fetchPopularMovies from "./fetchPopularMovies";
+
 const STORAGE_KEY_WATCH = 'save-watch';
 const STORAGE_KEY_QUEUE = 'save-queue';
 
-let arrFilmQueue = [];
 
 
-export const saveLocalStorageWatch = (film) => {
-   let arrFilmsWatch = [];
-    if (arrFilmsWatch.find(films => films.id === film.id)) {
-        console.log('Однаковий id');
+
+export const saveLocalStorageWatch = (event) => {
+    const buttonEl = event.currentTarget;
+    let arrFilmsWatch = [];
+    const film = {
+        id: buttonEl.dataset.id,
+        title: buttonEl.dataset.title,
+        genre: buttonEl.dataset.genre,
+        poster: buttonEl.dataset.poster,
+        release:buttonEl.dataset.release,
+    };
+    console.log(film)
+    if (localStorage.getItem(STORAGE_KEY_WATCH)) {
+        arrFilmsWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
+        if (arrFilmsWatch.find(filmWatch => filmWatch.id === film.id)) {            
+            console.log('Вже є такий фільм у Watch')
+            return;
+        }
+        arrFilmsWatch.push(film);
+        localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrFilmsWatch));
         return;
     }
-    
     arrFilmsWatch.push(film);
-    console.log(arrFilmsWatch);
-    // localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrFilmsWatch));
+    localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrFilmsWatch));
 };
 
-export const saveLocalStorageQueue = (film) => {
-    if (arrFilmQueue.find(films => films.id === film.id)) {
-        console.log('Однаковий id');
+export const saveLocalStorageQueue = (event) => {
+    const buttonEl = event.currentTarget;
+    let arrFilmQueue = [];
+    const film = {
+        id: buttonEl.dataset.id,
+        title: buttonEl.dataset.title,
+        genre: buttonEl.dataset.genre,
+        poster: buttonEl.dataset.poster,
+        release:buttonEl.dataset.release,
+    };
+    console.log(film)
+    if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
+        arrFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
+        if (arrFilmQueue.find(filmQueue => filmQueue.id === film.id)) {            
+            console.log('Вже є такий фільм у Queue')
+            return;
+        }
+        arrFilmQueue.push(film);
+        localStorage.setItem(STORAGE_KEY_QUEUE, JSON.stringify(arrFilmQueue));
         return;
     }
     arrFilmQueue.push(film);
@@ -33,4 +62,6 @@ const renderFilmWatch = () => {
     
     `)
 }
+
+
 
