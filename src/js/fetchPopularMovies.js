@@ -11,8 +11,3 @@ export default async function fetchPopularMovies(page) {
     console.error(error);
     }
 };
-
-
-
-
-
