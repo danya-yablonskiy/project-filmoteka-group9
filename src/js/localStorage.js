@@ -21,7 +21,7 @@ const saveLocalStorageWatch = (event) => {
         poster: buttonEl.dataset.poster,
         release:buttonEl.dataset.release,
     };
-    console.log(film)
+    // console.log(film)
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         arrFilmsWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
         if (arrFilmsWatch.find(filmWatch => filmWatch.id === film.id)) {             
@@ -46,7 +46,7 @@ const saveLocalStorageQueue = (event) => {
         poster: buttonEl.dataset.poster,
         release:buttonEl.dataset.release,
     };
-    console.log(film)
+    // console.log(film)
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         arrFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
         if (arrFilmQueue.find(filmQueue => filmQueue.id === film.id)) {             
@@ -74,9 +74,7 @@ const deleteFilmInWatch = (event) => {
     const buttonEl = event.currentTarget;
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         arrSevedFilms = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
-        const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);
-        console.log(buttonEl.dataset.id);
-        console.log(indexFilm)
+        const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);        
         if (indexFilm < 0) {
             Notiflix.Notify.failure('Такого фільма немає у Watch');
             return;
@@ -91,9 +89,7 @@ const deleteFilmInQueue = (event) => {
     const buttonEl = event.currentTarget;
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         arrSevedFilms = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
-        const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);
-        console.log(buttonEl.dataset.id);
-        console.log(indexFilm)
+        const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);        
         if (indexFilm < 0) {
             Notiflix.Notify.failure('Такого фільма немає у Queue');
             return;
