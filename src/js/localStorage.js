@@ -11,7 +11,7 @@ const STORAGE_KEY_QUEUE = 'save-queue';
 
 
 
-export const saveLocalStorageWatch = (event) => {
+const saveLocalStorageWatch = (event) => {
     const buttonEl = event.currentTarget;
     let arrFilmsWatch = [];
     const film = {
@@ -36,7 +36,7 @@ export const saveLocalStorageWatch = (event) => {
     localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrFilmsWatch));
 };
 
-export const saveLocalStorageQueue = (event) => {
+const saveLocalStorageQueue = (event) => {
     const buttonEl = event.currentTarget;
     let arrFilmQueue = [];
     const film = {
@@ -69,3 +69,38 @@ export const renderFilmWatch = () => {
     const renderFilms = savedWatchFilm.map(film => console.log(film));
 }
     
+const deleteFilmInWatch = (event) => {
+    let arrSevedFilms = [];
+    const buttonEl = event.currentTarget;
+    if (localStorage.getItem(STORAGE_KEY_WATCH)) {
+        arrSevedFilms = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
+        const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);
+        console.log(buttonEl.dataset.id);
+        console.log(indexFilm)
+        if (indexFilm < 0) {
+            Notiflix.Notify.failure('Такого фільма немає у Watch');
+            return;
+        }
+        arrSevedFilms.splice(indexFilm, 1); 
+        localStorage.setItem(STORAGE_KEY_WATCH,JSON.stringify(arrSevedFilms));
+    }
+} 
+
+const deleteFilmInQueue = (event) => {
+    let arrSevedFilms = [];
+    const buttonEl = event.currentTarget;
+    if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
+        arrSevedFilms = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
+        const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);
+        console.log(buttonEl.dataset.id);
+        console.log(indexFilm)
+        if (indexFilm < 0) {
+            Notiflix.Notify.failure('Такого фільма немає у Queue');
+            return;
+        }
+        arrSevedFilms.splice(indexFilm, 1); 
+        localStorage.setItem(STORAGE_KEY_QUEUE,JSON.stringify(arrSevedFilms));
+    }
+} 
+
+export { saveLocalStorageWatch, saveLocalStorageQueue, deleteFilmInWatch, deleteFilmInQueue };
