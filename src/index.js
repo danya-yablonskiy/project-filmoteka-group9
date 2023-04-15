@@ -1,1 +1,1 @@
-// import renderMarkupCards from "./js/renderMarkupCards";
+import renderMarkupCards from "./js/renderMarkupCards";
