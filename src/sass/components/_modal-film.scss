@@ -6,6 +6,8 @@
     height: 100%;
   
     background-color: $primary-grey-color;
+    z-index: 9999;
+    overflow-y: scroll;
   
   }
   
@@ -14,29 +16,52 @@
     pointer-events: none;
     visibility: hidden;
   }
+
+  .modal-film-open {
+    overflow: hidden;
+}
   
   .modal-film{
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   width: 280px;
-  height: 930px;
+  // height: 930px;
   
-  padding: 48px 20px 40px;
+  padding: 48px 20px 30px;
+  margin-top: 10px;
   
   background-color: #fff;
   
   @media screen and (min-width: 768px){
+    
+  
    width: 704px;
-   height: 552px;
-   padding: 40px 72px 64px 36px;
+  //  height: 552px;
+   padding: 40px 72px 44px 36px;
+   margin-top: 20px;
   }
   
   @media screen and (min-width: 1280px){
     width: 806px;
-    height: 558px;
+    // height: 558px;
     padding: 40px 12px;
+  }
+  }
+
+  .modal-film__trailer {
+    width: 240px;
+    height: 135px;
+    margin-top: 20px;
+
+    @media screen and (min-width: 768px){
+    width: 630px;
+    height: 354px;
+  }
+
+    @media screen and (min-width: 1280px){
+    width: 782px;
+    height: 440px;
   }
   }
   
@@ -50,6 +75,7 @@
     height: 30px;
   
     border: none;
+    background-color: transparent;
   
    cursor: pointer;
   
