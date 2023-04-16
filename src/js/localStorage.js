@@ -17,9 +17,9 @@ const saveLocalStorageWatch = (event) => {
     const film = {
         id: buttonEl.dataset.id,
         title: buttonEl.dataset.title,
-        genre: buttonEl.dataset.genre,
-        poster: buttonEl.dataset.poster,
-        release:buttonEl.dataset.release,
+        genre_ids: buttonEl.dataset.genre,
+        poster_path: buttonEl.dataset.poster,
+        release_date:buttonEl.dataset.release,
     };
     // console.log(film)
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
@@ -42,9 +42,9 @@ const saveLocalStorageQueue = (event) => {
     const film = {
         id: buttonEl.dataset.id,
         title: buttonEl.dataset.title,
-        genre: buttonEl.dataset.genre,
-        poster: buttonEl.dataset.poster,
-        release:buttonEl.dataset.release,
+        genre_ids: buttonEl.dataset.genre,
+        poster_path: buttonEl.dataset.poster,
+        release_date:buttonEl.dataset.release,
     };
     // console.log(film)
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
@@ -61,12 +61,55 @@ const saveLocalStorageQueue = (event) => {
     localStorage.setItem(STORAGE_KEY_QUEUE, JSON.stringify(arrFilmQueue));
 };
 
-export const renderFilmWatch = () => {
+const renderFilmWatch = () => {
     //почистити контейнер
     // container.innerHTML = '';
     //
-    const savedWatchFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
-    const renderFilms = savedWatchFilm.map(film => console.log(film));
+    if (localStorage.getItem(STORAGE_KEY_WATCH)) {
+        const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
+        //renderMarkupCards(savedFilm);
+    }
+};
+
+const renderFilmQueue = () => {
+    //почистити контейнер
+    // container.innerHTML = '';
+    //
+    if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
+        const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
+        //renderMarkupCards(savedFilm);
+    }
+};
+
+const renderFilmLibrary = () => {
+    let allFilms = [];
+    const savedFilmWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
+    const savedFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
+    if (savedFilmWatch && savedFilmQueue) {
+        allFilms.push(savedFilmQueue, savedFilmWatch);
+        console.log(students);
+        let allIdFilms = allFilms.map(film => film.id)
+        .filter((id, index, array) => array.indexOf(id) === index
+        );
+        let uniqueId = [];
+        for (let i = 0; i < allIdFilms.length; i+=1) {
+            newFilm = allFilms.find(options => options.id === allIdFilms[i]);
+            uniqueId.push(newFilm);
+            
+}
+        renderMarkupCards(uniqueId);
+        return;    
+    }
+    if (!savedFilmWatch) {
+        if (!savedFilmQueue) {
+            Notiflix.Notify.failure('no movie saved');
+            return;
+        }
+        renderMarkupCards(savedFilmQueue);
+        return;
+    }
+    renderMarkupCards(savedFilmWatch);
+
 }
     
 const deleteFilmInWatch = (event) => {
@@ -99,4 +142,4 @@ const deleteFilmInQueue = (event) => {
     }
 } 
 
-export { saveLocalStorageWatch, saveLocalStorageQueue, deleteFilmInWatch, deleteFilmInQueue };
+export { saveLocalStorageWatch, saveLocalStorageQueue, deleteFilmInWatch, deleteFilmInQueue, renderFilmWatch,renderFilmQueue, renderFilmLibrary};
