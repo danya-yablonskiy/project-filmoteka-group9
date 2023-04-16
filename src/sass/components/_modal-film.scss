@@ -59,8 +59,8 @@
   }
   
   .modal-film__close--icon{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
   
     .modal-film__close:hover &,
     .modal-film__close:focus &{
@@ -73,6 +73,7 @@
     margin-bottom: 20px;
     width: 240px;
     height: 357px;
+    overflow: hidden;
   
     @media screen and (min-width: 768px) {
       width: 264px;
@@ -85,6 +86,10 @@
         height: 478px;
         margin-right: 16px;
     }
+  }
+
+  .modal-film__img{
+    object-fit: cover;
   }
   
   .modal-film__title{

@@ -35,7 +35,10 @@
     
         &--underlined {
             text-decoration: underline;
-            cursor: pointer;
+            &:hover {
+                color: $primary-red-color;
+                cursor: pointer;
+            }
         }
         }
     &__developers {
