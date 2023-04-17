@@ -11,7 +11,8 @@
 }
 
 .loader__text {
-    color: #fbae17;
+    font-family: inherit;
+    color: $primary-red-color;
     display: inline-block;
     margin-left: 5px;
 }
@@ -30,7 +31,7 @@
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        background-color: #fbae17;
+        background-color: $primary-red-color;
         transform-origin: 50%;
         animation: bounce 500ms alternate infinite ease;
     }
