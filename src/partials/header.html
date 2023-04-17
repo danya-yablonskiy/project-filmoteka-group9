@@ -3,9 +3,15 @@
     <div class="header-container">
       <div class="nav-box">
         <div class="button-box">
-          <button type="button" class="button button-home">Home</button>
-          <button type="button" class="button button-library">
+          <button type="button" class="button button-home button-box__item">
+            Home
+          </button>
+
+          <button type="button" class="button button-library button-box__item">
             My library
+          </button>
+          <button type="button" class="button login-button button-box__item">
+            Log In/Sign Up
           </button>
         </div>
         <form id="search-form" class="search-form">
@@ -30,6 +36,44 @@
       <div class="library-button-box">
         <button class="button button__library">Watched</button>
         <button class="button button__library">Queue</button>
+      </div>
+    </div>
+    <div class="backdrop is-hidden" data-modal-header>
+      <div class="header-modal">
+        <button
+          class="header-modal__close"
+          type="button"
+          data-modal-header__close
+        >
+          <svg width="30" height="30">
+            <use href="./images/symbol-defs.svg#close-icon__desk"></use>
+          </svg>
+        </button>
+        <div class="header-modal__container">
+          <form id="header-modal__form">
+            <label for="" class="header-modal__label">Log In/Sign Up</label>
+            <input
+              id="form-mail"
+              class="header-modal__input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required="required"
+            />
+            <input
+              id="form-pass"
+              class="header-modal__input"
+              type="password"
+              name="password"
+              placeholder="Password"
+              required="required"
+            />
+            <div class="header-modal__button-container">
+              <button class="header-modal__button">Log In</button>
+              <button class="header-modal__button">Sign Up</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

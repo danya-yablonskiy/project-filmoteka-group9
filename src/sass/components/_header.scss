@@ -89,6 +89,10 @@
     height: 34px;
     
     margin-left: 14px;
+    padding-left: 14px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
     background: $primary-white-color;
     border-radius: 100px;
@@ -99,9 +103,20 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 1.2;
+
+    &:hover,:focus{
+        border: 2px solid black;
+        transition: border 300ms;
+    }
     @media screen and (min-width:768px) {
         margin-left: 0;
         margin-right: 4px;
+        
+        padding-left: 16px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+
+
         width: 165px;
         height: 38px;
         font-weight: 14px;
@@ -109,6 +124,10 @@
     }
     @media screen and (min-width:1200px) {
         margin-right: 8px;
+
+        padding-top: 13px;
+        padding-bottom: 13px;
+
         width: 187px;
         height: 42px;
         }
