@@ -1,5 +1,6 @@
 .button{
     font-family: 'Roboto';
+    cursor: pointer;
      
     font-weight: 500;
         font-size: 12px;
@@ -29,15 +30,13 @@
                 margin-right: 8px;
             }
         }
-        &:active{
-            background: $primary-black-color;
-            color: $primary-white-color;
-        }
+        
         &__library{
             color: $primary-red-color;
-            &:active{
-                background: $primary-red-color;
+            &:hover,:focus{
+                background-color:$primary-red-color; 
                 color: $primary-white-color;
+                transition: color 300ms;
             }
             &:not(:last-child) {
                  
@@ -53,8 +52,18 @@
                         }
         }
 }
+.is-active {
+    background: $primary-black-color;
+    color: $primary-white-color;
+}
 .button-box{
     display: flex;
+
+    &__item:hover,:focus{
+        background: $primary-black-color;
+        color: $primary-white-color;
+        transition: color  300ms;
+    }
    
     @media screen and (max-width:767px) {
         margin-bottom: 8px;

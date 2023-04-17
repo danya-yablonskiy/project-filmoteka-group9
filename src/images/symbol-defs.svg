@@ -9,5 +9,15 @@
 <symbol id="close-icon__desk" viewBox="0 0 32 32">
 <path d="m17.253 16 7.369-7.369a.885.885 0 0 0-.047-1.206.893.893 0 0 0-1.207-.047l-7.369 7.369L8.63 7.369a.892.892 0 0 0-1.262 1.262L14.746 16l-7.378 7.369a.891.891 0 0 0-.05 1.304.906.906 0 0 0 .663.26.88.88 0 0 0 .641-.31L16 17.254l7.369 7.369a.886.886 0 0 0 1.207-.047.893.893 0 0 0 .047-1.207L17.254 16z"/>
 </symbol>
+<symbol id='icon-logo' viewBox="0 0 32 32">
+<path d="M26.4265 2.66675H5.57317C3.96786 2.66675 2.6665 3.96811 2.6665 5.57341V26.4267C2.6665 28.0321 3.96786 29.3334 5.57317 29.3334H26.4265C28.0318 29.3334 29.3332 28.0321 29.3332 26.4267V5.57341C29.3332 3.96811 28.0318 2.66675 26.4265 2.66675Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.3335 2.66675V29.3334" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.6665 2.66675V29.3334" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.6665 16H29.3332" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.6665 9.33325H9.33317" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.6665 22.6667H9.33317" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.6665 22.6667H29.3332" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.6665 9.33325H29.3332" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
 </defs>
 </svg>

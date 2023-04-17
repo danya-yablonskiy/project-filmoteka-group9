@@ -1,0 +1,97 @@
+.header-modal{
+    position: relative;
+    margin: 0 auto;
+        width: 350px;
+        height: 500px;
+        overflow: hidden;
+        background:$bg-color;
+        border-radius: 10px;
+        box-shadow: 5px 20px 50px #000;
+}
+.header-modal__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: $bg-color;
+    border:  none;
+    cursor: pointer;
+}
+.header-modal__label{
+    color: $primary-black-color;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+                
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    padding-top: 10px;
+                
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+.header-modal__input{
+    height: 20px;
+    width: 70%;
+    background:$footer-color;
+    color: $primary-black-color;
+    
+    display: flex;
+    justify-content: center;
+    
+    border: none;
+    outline: none;
+    border-radius: 5px;
+            
+   
+    margin: 20px auto;
+    padding: 20px;
+
+    &:hover,:focus{
+        border: 2px solid black;
+    }
+    
+}
+.header-modal__button-container{
+    
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.header-modal__button{
+    font-family: 'Roboto';
+        cursor: pointer;
+    
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.2;
+    
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+    
+        border-radius: 100px;
+        border: none;
+        padding: 10px 22px;
+
+    &:not(:last-child){
+        margin-right: 8px;
+    }
+   background-color: $primary-red-color;
+   color: $primary-white-color;
+    
+        &:hover,
+        :focus {
+            background-color: $primary-white-color;
+            color: $primary-red-color;
+            border: 2px solid $primary-red-color;
+            transition: color 300ms;
+        }
+}
+
+
