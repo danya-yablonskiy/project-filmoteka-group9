@@ -36,6 +36,7 @@
             &:hover,:focus{
                 background-color:$primary-red-color; 
                 color: $primary-white-color;
+                transition: color 300ms;
             }
             &:not(:last-child) {
                  
@@ -60,7 +61,8 @@
 
     &__item:hover,:focus{
         background: $primary-black-color;
-            color: $primary-white-color;
+        color: $primary-white-color;
+        transition: color  300ms;
     }
    
     @media screen and (max-width:767px) {

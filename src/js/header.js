@@ -12,9 +12,6 @@ btnHome.addEventListener('click', onBtnHomeClick);
  
 libraryBox.classList.add('is-hidden');
  
-
-
-
  
 
 function onBtnLibraryClick(e) {
@@ -22,8 +19,8 @@ function onBtnLibraryClick(e) {
     btnHome.classList.remove('is-active');
     currentPage.classList.add('is-active');
     
-
-    //Перевірка на id
+//запустити функцію,яка очищує контейнер
+ 
     form.classList.add('is-hidden');
      libraryBox.classList.remove('is-hidden');
 
