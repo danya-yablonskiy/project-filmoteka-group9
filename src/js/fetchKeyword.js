@@ -1,8 +1,11 @@
 import axios from "axios";
 import { pathParams } from "./options";
+import displayLoader  from "./loader";
+import hideLoader from "./loader";
 
 fetchPopularMovies
 export default async function fetchKeyword(name, page) {
+  displayLoader();
     const { BASE_URL, API_KEY, media_type} = pathParams;
   try {
     const response = await
@@ -11,5 +14,5 @@ export default async function fetchKeyword(name, page) {
   } catch (error) {
     console.error(error);
     }
-
+  hideLoader();
 };
