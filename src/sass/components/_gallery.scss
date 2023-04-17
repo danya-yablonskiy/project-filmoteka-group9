@@ -1,0 +1,131 @@
+.gallery {
+  max-width: 100%;
+  padding: 20 20 40 20;
+  background-color: $bg-color;
+
+  @media screen and (min-width: 320px) {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: calc((100% - 32px) / 2);
+    gap: 32px;
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+    padding-left: 0;
+    padding-right: 0;
+    flex-basis: calc((100% - 16px) / 3);
+    gap: 16px;
+  }
+
+  &__film-card {
+    cursor: pointer;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 280px;
+    width: 100%;
+
+    transition: transform 250ms linear;
+
+    &:hover,
+    :focus {
+      transform: scale(1.01);
+      box-shadow: 0 6px 4px rgba(185, 47, 44, 0.25),
+        0 4px 4px rgb(185 47 44 / 25%), 5px 4px 6px rgb(185 47 44 / 25%);
+    }
+
+    @media screen and (min-width: 320px) {
+      width: 280px;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 336px;
+      padding-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
+      row-gap: 32px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 395px;
+    }
+  }
+}
+
+.card__image {
+  min-width: 280px;
+  width: 100%;
+
+  @media screen and (min-width: 320px) {
+    width: 280px;
+    height: 400px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    height: 455px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+    height: 575px;
+  }
+}
+
+.card__title {
+  padding-top: 10px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: $primary-black-color;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.card__wrapper {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: $primary-red-color;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.card__genres {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card__el {
+  white-space: nowrap;
+}

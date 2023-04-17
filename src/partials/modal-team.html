@@ -1,247 +1,115 @@
 <div class="backdrop is-hidden" data-modal-team>
-    <div class="modal-team modal">
+  <div class="modal-team modal">
 
-    <div class="modal-team__container">
-        <button class="close-btn" data-modal-team-close>
-            <svg class="close-btn__icon close-btn--icon-mob" width="20" height="20">
-              <use href="./images/symbol-defs.svg#close-icon__mob"></use>
-            </svg>
-            <svg class="close-btn__icon close-btn--icon-desk" width="24" height="24">
-              <use
-                class="close-btn__icon-desk"
-                href="./images/symbol-defs.svg#close-icon__desk"
-              ></use>
-            </svg>
-          </button>
-          <p class="modal-team__text">GoIT Students</p>
-          <ul class="modal-team__gallery list">
-              <li class="modal-team__item">
-                 <picture>
-                      <source
-                        media="(min-width: 1200px)"
-                        srcset="./images/Demjanenko_desktop.jpg 1x, ./images/Demjanenko_desktop@2x.jpg 2x"
-                      >
-                      <source
-                        media="(min-width: 768px)"
-                        srcset="./images/Demjanenko_tablet.jpg 1x, ./images/Demjanenko_tablet@2x.jpg 2x"
-                      >
-      
-                      <source
-                        media="(max-width: 767px)"
-                        srcset="./images/Demjanenko_mobile.jpg 1x, ./images/Demjanenko_mobile@2x.jpg 2x"
-                      >
-                      <img src="./images/Demjanenko_desktop.jpg" alt="Данил Яблонський" >
-                    </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">ДАНИЛ ЯБЛОНСЬКИЙ</p>
-                      <p class="modal-team__position">TEAM LEAD <br> Реалізація аутентифікації користувача</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                  <picture>
-                      <source
-                        media="(min-width: 1200px)"
-                        srcset="./images/Demjanenko_desktop.jpg 1x, ./images/Demjanenko_desktop@2x.jpg 2x"
-                      >
-                      <source
-                        media="(min-width: 768px)"
-                        srcset="./images/Demjanenko_tablet.jpg 1x, ./images/Demjanenko_tablet@2x.jpg 2x"
-                      >
-      
-                      <source
-                        media="(max-width: 767px)"
-                        srcset="./images/Demjanenko_mobile.jpg 1x, ./images/Demjanenko_mobile@2x.jpg 2x"
-                      >
-                      <img src="./images/Demjanenko_desktop.jpg" alt="Олександр Іванцов" >
-                    </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">ОЛЕКСАНДР ІВАНЦОВ</p>
-                      <p class="modal-team__position">Логіка для модалок</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                  <picture>
-                      <source
-                        media="(min-width: 1200px)"
-                        srcset="./images/Demjanenko_desktop.jpg 1x, ./images/Demjanenko_desktop@2x.jpg 2x"
-                      >
-                      <source
-                        media="(min-width: 768px)"
-                        srcset="./images/Demjanenko_tablet.jpg 1x, ./images/Demjanenko_tablet@2x.jpg 2x"
-                      >
-      
-                      <source
-                        media="(max-width: 767px)"
-                        srcset="./images/Demjanenko_mobile.jpg 1x, ./images/Demjanenko_mobile@2x.jpg 2x"
-                      >
-                      <img src="./images/Demjanenko_desktop.jpg" alt="Андрій Іванюк" >
-                    </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">Андрій Іванюк</p>
-                      <p class="modal-team__position">Loader для асинхронних запитів</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                <picture>
-                    <source
-                      media="(min-width: 1200px)"
-                      srcset="./images/Repina_desktop.jpg 1x, ./images/Repina_desktop@2x.jpg 2x"
-                    >
-                    <source
-                      media="(min-width: 768px)"
-                      srcset="./images/Repina_tablet.jpg 1x, ./images/Repina_tablet@2x.jpg 2x"
-                    >
-    
-                    <source
-                      media="(max-width: 767px)"
-                      srcset="./images/Repina_mobile.jpg 1x, ./images/Repina_mobile@2x.jpg 2x"
-                      
-                    >
-                    <img src="./images/Repina_desktop.jpg" alt="Марина Чічеріна" >
-                  </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">МАРИНА ЧІЧЕРІНА</p>
+  <div class="modal-team__container">
+      <button class="close-btn" data-modal-team-close>
+          <svg class="close-btn__icon close-btn--icon-mob" width="20" height="20">
+            <use href="./images/symbol-defs.svg#close-icon__mob"></use>
+          </svg>
+          <svg class="close-btn__icon close-btn--icon-desk" width="24" height="24">
+            <use
+              class="close-btn__icon-desk"
+              href="./images/symbol-defs.svg#close-icon__desk"
+            ></use>
+          </svg>
+        </button>
+        <p class="modal-team__text">GoIT Students</p>
+        <ul class="modal-team__gallery list">
+            <li class="modal-team__item">
+                    <img class="modal-team__image" src="./images/Danyl_Yablonskii.jpg" alt="Данил Яблонський" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">ДАНИЛ<br> ЯБЛОНСЬКИЙ</p>
+                    <div class="modal-team__overlay">
+                      <p class="modal-team__position">TEAM LEAD<br> Аутентифікація користувачів</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Oleksandr__Ivantsov.jpg" alt="Олександр Іванцов" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">ОЛЕКСАНДР<br> ІВАНЦОВ</p>
+                    <div class="modal-team__overlay">
+                      <p class="modal-team__position">Реалізація логіки модалок</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Andrii_Ivanyk.jpg" alt="Андрій Іванюк" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">Андрій<br> Іванюк</p>
+                    <div class="modal-team__overlay">
+                      <p class="modal-team__position">Реалізація лоадера для асинхронних запитів</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Maryna_Chicherina.jpg" alt="Марина Чічеріна" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">МАРИНА<br> ЧІЧЕРІНА</p>
+                    <div class="modal-team__overlay">
                       <p class="modal-team__position">SCRUM MASTER <br>Верстка футера, модалка у футері</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                  <picture>
-                      <source
-                        media="(min-width: 1200px)"
-                        srcset="./images/Demjanenko_desktop.jpg 1x, ./images/Demjanenko_desktop@2x.jpg 2x"
-                      >
-                      <source
-                        media="(min-width: 768px)"
-                        srcset="./images/Demjanenko_tablet.jpg 1x, ./images/Demjanenko_tablet@2x.jpg 2x"
-                      >
-      
-                      <source
-                        media="(max-width: 767px)"
-                        srcset="./images/Demjanenko_mobile.jpg 1x, ./images/Demjanenko_mobile@2x.jpg 2x"
-                      >
-                      <img src="./images/Demjanenko_desktop.jpg" alt="Сергій Левенко" >
-                    </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">СЕРГІЙ ЛЕВЕНКО</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Serhiy_Levenko.jpg" alt="Сергій Левенко" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">СЕРГІЙ<br> ЛЕВЕНКО</p>
+                    <div class="modal-team__overlay">
                       <p class="modal-team__position">Верстка картки та контейнера головної сторінки</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                  <picture>
-                      <source
-                        media="(min-width: 1200px)"
-                        srcset="./images/Demjanenko_desktop.jpg 1x, ./images/Demjanenko_desktop@2x.jpg 2x"
-                      >
-                      <source
-                        media="(min-width: 768px)"
-                        srcset="./images/Demjanenko_tablet.jpg 1x, ./images/Demjanenko_tablet@2x.jpg 2x"
-                      >
-      
-                      <source
-                        media="(max-width: 767px)"
-                        srcset="./images/Demjanenko_mobile.jpg 1x, ./images/Demjanenko_mobile@2x.jpg 2x"
-                      >
-                      <img src="./images/Demjanenko_desktop.jpg" alt="Віталій Брижатюк" >
-                    </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">ВІТАЛІЙ БРИЖАТЮК</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Vitalii_Bryzhatuk.jpg" alt="Віталій Брижатюк" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">ВІТАЛІЙ<br> БРИЖАТЮК</p>
+                    <div class="modal-team__overlay">
                       <p class="modal-team__position">Реалізація роботи з local-storage</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                <picture>
-                    <source
-                      media="(min-width: 1200px)"
-                      srcset="./images/Repina_desktop.jpg 1x, ./images/Repina_desktop@2x.jpg 2x"
-                    >
-                    <source
-                      media="(min-width: 768px)"
-                      srcset="./images/Repina_tablet.jpg 1x, ./images/Repina_tablet@2x.jpg 2x"
-                    >
-    
-                    <source
-                      media="(max-width: 767px)"
-                      srcset="./images/Repina_mobile.jpg 1x, ./images/Repina_mobile@2x.jpg 2x"
-                      
-                    >
-                    <img src="./images/Repina_desktop.jpg" alt="Марія Мартинюк" >
-                  </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">МАРІЯ МАРТИНЮК</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Mariya_Vovchuk.jpg" alt="Марія Вовчук" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">МАРІЯ<br> ВОВЧУК</p>
+                    <div class="modal-team__overlay">
                       <p class="modal-team__position">Верстка хедера, логіка зміни вікон</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                  <picture>
-                      <source
-                        media="(min-width: 1200px)"
-                        srcset="./images/Demjanenko_desktop.jpg 1x, ./images/Demjanenko_desktop@2x.jpg 2x"
-                      >
-                      <source
-                        media="(min-width: 768px)"
-                        srcset="./images/Demjanenko_tablet.jpg 1x, ./images/Demjanenko_tablet@2x.jpg 2x"
-                      >
-      
-                      <source
-                        media="(max-width: 767px)"
-                        srcset="./images/Demjanenko_mobile.jpg 1x, ./images/Demjanenko_mobile@2x.jpg 2x"
-                      >
-                      <img src="./images/Demjanenko_desktop.jpg" alt="Владислав Яківець" >
-                    </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">ВЛАДИСЛАВ ЯКІВЕЦЬ</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Vladyslav_Yakivets.jpg" alt="Владислав Яківець" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">ВЛАДИСЛАВ<br> ЯКІВЕЦЬ</p>
+                    <div class="modal-team__overlay">
                       <p class="modal-team__position">Верстка модалки з динамічною інформацією про фільм</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                <picture>
-                    <source
-                      media="(min-width: 1200px)"
-                      srcset="./images/Repina_desktop.jpg 1x, ./images/Repina_desktop@2x.jpg 2x"
-                    >
-                    <source
-                      media="(min-width: 768px)"
-                      srcset="./images/Repina_tablet.jpg 1x, ./images/Repina_tablet@2x.jpg 2x"
-                    >
-    
-                    <source
-                      media="(max-width: 767px)"
-                      srcset="./images/Repina_mobile.jpg 1x, ./images/Repina_mobile@2x.jpg 2x"
-                      
-                    >
-                    <img src="./images/Repina_desktop.jpg" alt="Анастасія Чебан" >
-                  </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">АНАСТАСІЯ ЧЕБАН</p>
-                      <p class="modal-team__position">Робота з пагінацією сторінок</p>
-                  </div>
-              </li>
-              <li class="modal-team__item">
-                  <picture>
-                      <source
-                        media="(min-width: 1200px)"
-                        srcset="./images/Demjanenko_desktop.jpg 1x, ./images/Demjanenko_desktop@2x.jpg 2x"
-                      >
-                      <source
-                        media="(min-width: 768px)"
-                        srcset="./images/Demjanenko_tablet.jpg 1x, ./images/Demjanenko_tablet@2x.jpg 2x"
-                      >
-      
-                      <source
-                        media="(max-width: 767px)"
-                        srcset="./images/Demjanenko_mobile.jpg 1x, ./images/Demjanenko_mobile@2x.jpg 2x"
-                      >
-                      <img src="./images/Demjanenko_desktop.jpg" alt="Валентин Пилипчук" >
-                    </picture>
-                  <div class="modal-team__content">
-                      <p class="modal-team__title">ВАЛЕНТИН ПИЛИПЧУК</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Anastasia_Cheban.jpg" alt="Анастасія Чебан" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">АНАСТАСІЯ<br> ЧЕБАН</p>
+                    <div class="modal-team__overlay">
+                      <p class="modal-team__position">Реалізація пагінації</p>
+                    </div>
+                </div>
+            </li>
+            <li class="modal-team__item">
+              <img class="modal-team__image" src="./images/Valentyn_Pylypchuk.jpg" alt="Валентин Пилипчук" width="156" height="156">
+                <div class="modal-team__content">
+                    <p class="modal-team__title">ВАЛЕНТИН<br> ПИЛИПЧУК</p>
+                    <div class="modal-team__overlay">
                       <p class="modal-team__position">Логіка пошуку та рендер карток фільмів</p>
-                  </div>
-              </li>
-          </ul>
-  
-    </div>
-       
-    </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
   </div>
+     
+  </div>
+</div>
+
   
