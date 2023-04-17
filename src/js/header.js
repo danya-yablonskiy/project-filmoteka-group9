@@ -1,4 +1,7 @@
-
+// import { displayLoader } from './loader';
+// import { hideLoader } from './loader';
+// import { renderFilmLibrary } from './localStorage';
+// import { appendMarkup } from './renderMarkupCards';
 
 const logo = document.querySelector('.header-logo');
 const form = document.querySelector('.search-form');
@@ -8,6 +11,7 @@ const btnLibrary = document.querySelector('.button-library');
 const input = document.querySelector('.search-form__input');
 const libraryBox = document.querySelector('.library-button-box');
 const logInBtn = document.querySelector('.login-button');
+const gallery = document.querySelector('.gallery');
 
 
 
@@ -16,6 +20,7 @@ btnHome.addEventListener('click', onBtnHomeClick);
 
  
 libraryBox.classList.add('is-hidden');
+btnHome.classList.add('is-active');
  
  
 
@@ -25,13 +30,17 @@ function onBtnLibraryClick(e) {
     currentPage.classList.add('is-active');
     
 //запустити функцію,яка очищує контейнер
+    // gellaryClear();
  
     form.classList.add('is-hidden');
     logInBtn.classList.add('is-hidden');
     libraryBox.classList.remove('is-hidden');
 
-    //запустити лоадер
-    //запустити рендер функції локал сторейдж
+    // запустити лоадер
+    // displayLoader();
+    // hideLoader();
+    // //запустити рендер функції локал сторейдж
+     
     
 }
 function onBtnHomeClick(e) {
@@ -43,5 +52,9 @@ function onBtnHomeClick(e) {
     form.classList.remove('is-hidden');
     logInBtn.classList.remove('is-hidden');
     libraryBox.classList.add('is-hidden');
-}
 
+    // appendMarkup();
+}
+function gellaryClear(){
+    gallery.innerHTML = '';
+}
