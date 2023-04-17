@@ -67,7 +67,7 @@ const renderFilmWatch = () => {
     //
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
-        //renderMarkupCards(savedFilm);
+        //appendMarkup(savedFilm);
     }
 };
 
@@ -77,7 +77,7 @@ const renderFilmQueue = () => {
     //
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
-        //renderMarkupCards(savedFilm);
+        //appendMarkup(savedFilm);
     }
 };
 
@@ -97,7 +97,7 @@ const renderFilmLibrary = () => {
             uniqueId.push(newFilm);
             
 }
-        renderMarkupCards(uniqueId);
+        appendMarkup(uniqueId);
         return;    
     }
     if (!savedFilmWatch) {
@@ -105,10 +105,10 @@ const renderFilmLibrary = () => {
             Notiflix.Notify.failure('no movie saved');
             return;
         }
-        renderMarkupCards(savedFilmQueue);
+        appendMarkup(savedFilmQueue);
         return;
     }
-    renderMarkupCards(savedFilmWatch);
+    appendMarkup(savedFilmWatch);
 
 }
     
