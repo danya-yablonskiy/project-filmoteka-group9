@@ -1,4 +1,3 @@
-import fetchKeyword from './fetchKeyword';
 import { genres } from '../data/genres.json';
 
 const gallery = document.querySelector('.gallery');
@@ -7,10 +6,8 @@ const genresJson = JSON.stringify(genres);
 const parseGenres = JSON.parse(genresJson);
 let arrayGenres = [];
 
-
-function renderMarkupCards(card) {
-  return card
-    .map(({ poster_path, release_date, genre_ids, title, id }) => {
+export default function renderMarkupCards(card) {
+  return card.map(({ poster_path, release_date, genre_ids, title, id }) => {
       if (!poster_path || !release_date || !arrayGenres) {
         return;
       }
@@ -38,6 +35,6 @@ function genresRender(genreId) {
   return arrayGenres.join(', ');
 }
 
-function appendMarkup(card) {
-  gallery.insertAdjacentHTML('beforeend', renderMarkupCards(card));
+export function appendMarkup(card) {
+  gallery.insertAdjacentHTML('beforeend', renderMarkupCards(card));  
 }
