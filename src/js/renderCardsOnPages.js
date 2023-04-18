@@ -10,7 +10,7 @@ import Notiflix from 'notiflix';
 export function onSearch(e) {
    
     e.preventDefault();
-    let name = document.querySelector('.search-form__input').value;
+    const name = document.querySelector('.search-form__input').value;
     const headerNewClass = document.querySelector('header');
     if (name !== '') {
         headerNewClass.classList.remove("homePage");
