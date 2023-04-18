@@ -7,6 +7,12 @@
         background:$bg-color;
         border-radius: 10px;
         box-shadow: 5px 20px 50px #000;
+
+        
+            @media screen and (max-width: 767px){
+                width: 250px;
+                height: 400px;
+}
 }
 .header-modal__close {
     position: absolute;
@@ -30,6 +36,10 @@
                 
     cursor: pointer;
     transition: 300ms ease-in-out;
+
+    @media screen and (max-width: 767px) {
+            margin: 45px;
+        }
 }
 
 .header-modal__input{
@@ -43,7 +53,7 @@
     
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 100px;
             
    
     margin: 20px auto;

@@ -1,5 +1,4 @@
-const API_KEY = '608a612cc746968ead61312fe4955129';
-const BASE_URL = 'https://api.themoviedb.org/3/movie';
+import { pathParams } from './options';
 
 export default class FilmInfoApiService {
   constructor() {
@@ -7,7 +6,7 @@ export default class FilmInfoApiService {
   }
 
   fetchFilmInfo() {
-    const url = `${BASE_URL}/${this.filmId}?api_key=${API_KEY}&language=en-US`;
+    const url = `${pathParams.BASE_URL}movie/${this.filmId}?api_key=${pathParams.API_KEY}&language=en-US`;
 
     return fetch(url)
       .then(response => response.json())
@@ -17,7 +16,7 @@ export default class FilmInfoApiService {
   }
 
   fetchFilmTrailer() {
-    const url = `${BASE_URL}/${this.filmId}/videos?api_key=${API_KEY}&language=en-US`;
+    const url = `${pathParams.BASE_URL}movie/${this.filmId}/videos?api_key=${pathParams.API_KEY}&language=en-US`;
 
     return fetch(url)
       .then(response => response.json())

@@ -91,7 +91,7 @@ const renderFilmQueue = () => {
     Notiflix.Notify.failure('Not Found saved Queue');
 };
 
-const renderFilmLibrary = () => {
+ export const renderFilmLibrary = () => {
     let allFilms = [];
     const savedFilmWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
     const savedFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
