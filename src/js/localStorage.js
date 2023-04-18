@@ -59,10 +59,11 @@ const saveLocalStorageQueue = (event) => {
 const renderFilmWatch = () => { 
     refs.watchBtn.classList.add('btn-current');
     refs.queueBtn.classList.remove('btn-current');
-    refs.filmCardsContainer.innerHTML = '';    
-    if (localStorage.getItem(STORAGE_KEY_WATCH)) {
-        const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
-        appendMarkup(savedFilm);
+    refs.filmCardsContainer.innerHTML = '';   
+    const savedFilmWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
+    const lengtharrWatch = savedFilmWatch.length;
+    if (lengtharrWatch > 0) {          
+        appendMarkup(savedFilmWatch);
         return;
     }
     Notiflix.Notify.failure('Not Found saved Watch');
@@ -71,10 +72,11 @@ const renderFilmWatch = () => {
 const renderFilmQueue = () => { 
     refs.watchBtn.classList.remove('btn-current');
     refs.queueBtn.classList.add('btn-current');
-    refs.filmCardsContainer.innerHTML = '';    
-    if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
-        const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
-        appendMarkup(savedFilm);
+    refs.filmCardsContainer.innerHTML = ''; 
+    const savedFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
+    const lengtharrQueue = savedFilmQueue.length;
+    if (lengtharrQueue.length > 0) {        
+        appendMarkup(lengtharrQueue);
         return;
     }
     Notiflix.Notify.failure('Not Found saved Queue');
@@ -87,8 +89,9 @@ const renderFilmLibrary = () => {
     let allFilms = [];
     const savedFilmWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
     const savedFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
-    
-    if (savedFilmWatch && savedFilmQueue) {
+    const lengtharrWatch = savedFilmWatch.length;
+    const lengtharrQueue = savedFilmQueue.length;    
+    if (lengtharrWatch > 0 && lengtharrQueue > 0) {        
         allFilms.push(...savedFilmQueue, ...savedFilmWatch);        
         let allIdFilms = allFilms.map(film => film.id)
         .filter((id, index, array) => array.indexOf(id) === index
@@ -103,8 +106,8 @@ const renderFilmLibrary = () => {
         appendMarkup(uniqueId);
         return;    
     }
-    if (!savedFilmWatch) {
-        if (!savedFilmQueue) {
+    if (lengtharrWatch < 1) {        
+        if (lengtharrQueue < 1) {            
             Notiflix.Notify.failure('Not Found movie saved');
             return;
         }
