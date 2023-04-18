@@ -25,10 +25,8 @@ btnHome.classList.add('is-active');
  
  
 
-function onBtnLibraryClick(e) {
-    // currentPage = e.currentTarget;   
-    btnHome.classList.remove('is-active');
-    // currentPage.classList.add('is-active');
+function onBtnLibraryClick(e) {       
+    btnHome.classList.remove('is-active');    
     btnLibrary.classList.add('is-active');
     
 //запустити функцію,яка очищує контейнер
@@ -48,9 +46,8 @@ function onBtnLibraryClick(e) {
     
 }
 function onBtnHomeClick(e) {
-    // currentPage = e.currentTarget;
-    btnLibrary.classList.remove('is-active');
-    // currentPage.classList.add('is-active');
+    
+    btnLibrary.classList.remove('is-active');    
     btnHome.classList.add('is-active');
     
 

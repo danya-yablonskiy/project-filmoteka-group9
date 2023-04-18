@@ -4,22 +4,6 @@ import { appendMarkup } from "./renderMarkupCards";
 const STORAGE_KEY_WATCH = 'save-watch';
 const STORAGE_KEY_QUEUE = 'save-queue';
 
-//Вставити у модалку
-//import { saveLocalStorageWatch } from "./js/localStorage";
-//import { saveLocalStorageQueue } from "./js/localStorage";
-
-// button1.addEventListener('click', saveLocalStorageWatch);
-// button2.addEventListener('click', saveLocalStorageQueue);
-
-//data-action="watch"
-//data-action="queue"
-//data-action="library"
-
-const watchBtn = document.querySelector('button[data-action="watch"]');
-const queueBtn = document.querySelector('button[data-action="queue"]');
-const libraryBtn = document.querySelector('button[data-action="library"]');
-
-
 const saveLocalStorageWatch = (event) => {
     const buttonEl = event.currentTarget;
     let arrFilmsWatch = [];
@@ -39,7 +23,7 @@ const saveLocalStorageWatch = (event) => {
         }
         arrFilmsWatch.push(film);
         localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrFilmsWatch));
-        Notiflix.Notify.success('')
+        Notiflix.Notify.success('Movie is saved to Watch')
         return;
     }
     arrFilmsWatch.push(film);
@@ -64,6 +48,7 @@ const saveLocalStorageQueue = (event) => {
         }
         arrFilmQueue.push(film);
         localStorage.setItem(STORAGE_KEY_QUEUE, JSON.stringify(arrFilmQueue));
+        Notiflix.Notify.success('Movie is saved to Queue');
         return;
     }
     arrFilmQueue.push(film);
