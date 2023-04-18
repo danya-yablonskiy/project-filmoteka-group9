@@ -34,7 +34,7 @@ const saveLocalStorageWatch = (event) => {
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         arrFilmsWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
         if (arrFilmsWatch.find(filmWatch => filmWatch.id === film.id)) {             
-            Notiflix.Notify.failure('Вже є такий фільм у Watch')
+            Notiflix.Notify.failure('Such a movie is already added to WATCH');
             return;
         }
         arrFilmsWatch.push(film);
@@ -59,7 +59,7 @@ const saveLocalStorageQueue = (event) => {
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         arrFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
         if (arrFilmQueue.find(filmQueue => filmQueue.id === film.id)) {             
-            Notiflix.Notify.failure('Вже є такий фільм у Queue')
+            Notiflix.Notify.failure('Such a movie is already added to QUEUE');
             return;
         }
         arrFilmQueue.push(film);
@@ -134,7 +134,7 @@ const deleteFilmInWatch = (event) => {
         arrSevedFilms = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
         const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);        
         if (indexFilm < 0) {            
-            Notiflix.Notify.failure('Такого фільма немає у Watch');
+            Notiflix.Notify.failure('There is no such film in WATCH');
             return;
         }
         arrSevedFilms.splice(indexFilm, 1); 
@@ -149,7 +149,7 @@ const deleteFilmInQueue = (event) => {
         arrSevedFilms = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
         const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);        
         if (indexFilm < 0) {
-            Notiflix.Notify.failure('Такого фільма немає у Queue');
+            Notiflix.Notify.failure('There is no such film in QUEUE');
             return;
         }
         arrSevedFilms.splice(indexFilm, 1); 
