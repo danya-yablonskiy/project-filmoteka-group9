@@ -40,10 +40,6 @@ export function onFilmCardsContainerClick(e) {
       );
       hideLoader();
       openFilmModal();
-      // setTimeout(() => {
-      //   hideLoader();
-      //   openFilmModal();
-      // }, 2000);
     })
     .catch(error => console.log(error));
 }
@@ -60,13 +56,15 @@ function makeFilmModalMarkup({
   overview,
   release_date,
 }) {
+  let normalizedTitle = title;
+  if (title.length > 20) {
+    normalizedTitle = title.slice(0, 20).padEnd(23, '.');
+  }
   return `<div class="modal-film__img-box">
               <img class="modal-film__img" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
           </div>
       <div class="modal-film__thumb">
-         <h3 class="modal-film__title">${title
-           .slice(0, 22)
-           .padEnd(25, '.')}</h3>
+         <h3 class="modal-film__title">${normalizedTitle}</h3>
          <ul class="modal-film__about">
           <li class="modal-film__about-line">
               <p class="modal-film__about-line--name">Vote / Votes</p>
