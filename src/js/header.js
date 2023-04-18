@@ -21,10 +21,9 @@ btnHome.classList.add('is-active');
  
  
 
-function onBtnLibraryClick(e) {
-     
-    btnHome.classList.remove('is-active');
    
+function onBtnLibraryClick(e) {       
+    btnHome.classList.remove('is-active');    
     btnLibrary.classList.add('is-active');
     
  
@@ -41,9 +40,8 @@ function onBtnLibraryClick(e) {
     
 }
 function onBtnHomeClick(e) {
-   
-    btnLibrary.classList.remove('is-active');
-     
+    
+    btnLibrary.classList.remove('is-active');    
     btnHome.classList.add('is-active');
     
 
