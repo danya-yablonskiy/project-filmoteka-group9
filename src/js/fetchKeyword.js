@@ -9,9 +9,9 @@ export default async function fetchKeyword(name, page) {
   try {
     const response = await
       axios.get(`${BASE_URL}/search/${media_type}?api_key=${API_KEY}&language=en-US&query=${name}&page=${page}`);
+    hideLoader();
     return response.data;
   } catch (error) {
     console.error(error);
     }
-  hideLoader();
 };
