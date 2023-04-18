@@ -26,7 +26,7 @@ btnHome.classList.add('is-active');
  
 
 function onBtnLibraryClick(e) {
-    currentPage = e.target;
+    currentPage = e.currentTarget;   
     btnHome.classList.remove('is-active');
     currentPage.classList.add('is-active');
     
@@ -47,7 +47,7 @@ function onBtnLibraryClick(e) {
     
 }
 function onBtnHomeClick(e) {
-    currentPage = e.target;
+    currentPage = e.currentTarget;
     btnLibrary.classList.remove('is-active');
     currentPage.classList.add('is-active');
     
