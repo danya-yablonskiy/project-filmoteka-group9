@@ -135,6 +135,8 @@ export function closeFilmModal() {
   document.body.classList.remove('modal-film-open');
   document.removeEventListener('keydown', onEscButtonPress);
   refs.filmModalBackdrop.removeEventListener('click', onBackdropClick);
+  modalCloseBtn.removeEventListener('click', closeFilmModal);
+  
 }
 
 function onEscButtonPress(e) {
