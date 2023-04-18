@@ -39,6 +39,7 @@ const saveLocalStorageWatch = (event) => {
         }
         arrFilmsWatch.push(film);
         localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrFilmsWatch));
+        Notiflix.Notify.success('')
         return;
     }
     arrFilmsWatch.push(film);
