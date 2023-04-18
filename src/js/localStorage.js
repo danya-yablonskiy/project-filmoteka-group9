@@ -57,7 +57,8 @@ const saveLocalStorageQueue = (event) => {
 };
 
 const renderFilmWatch = () => { 
-
+    refs.watchBtn.classList.add('.');
+    refs.queueBtn.classList.remove('.');
     refs.filmCardsContainer.innerHTML = '';    
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
@@ -67,9 +68,10 @@ const renderFilmWatch = () => {
     Notiflix.Notify.failure('Not Found saved Watch');
 };
 
-const renderFilmQueue = () => {    
-    refs.filmCardsContainer.innerHTML = '';
-    
+const renderFilmQueue = () => { 
+    refs.watchBtn.classList.remove('.');
+    refs.queueBtn.classList.add('.');
+    refs.filmCardsContainer.innerHTML = '';    
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
         appendMarkup(savedFilm);
@@ -79,6 +81,8 @@ const renderFilmQueue = () => {
 };
 
 const renderFilmLibrary = () => {
+    refs.watchBtn.classList.remove('.');
+    refs.queueBtn.classList.remove('.');
     refs.filmCardsContainer.innerHTML = ''; 
     let allFilms = [];
     const savedFilmWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
