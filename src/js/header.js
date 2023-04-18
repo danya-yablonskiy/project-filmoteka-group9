@@ -26,9 +26,10 @@ btnHome.classList.add('is-active');
  
 
 function onBtnLibraryClick(e) {
-    currentPage = e.currentTarget;   
+    // currentPage = e.currentTarget;   
     btnHome.classList.remove('is-active');
-    currentPage.classList.add('is-active');
+    // currentPage.classList.add('is-active');
+    btnLibrary.classList.add('is-active');
     
 //запустити функцію,яка очищує контейнер
     clearMarkup();
@@ -47,9 +48,10 @@ function onBtnLibraryClick(e) {
     
 }
 function onBtnHomeClick(e) {
-    currentPage = e.currentTarget;
+    // currentPage = e.currentTarget;
     btnLibrary.classList.remove('is-active');
-    currentPage.classList.add('is-active');
+    // currentPage.classList.add('is-active');
+    btnHome.classList.add('is-active');
     
 
     form.classList.remove('is-hidden');
