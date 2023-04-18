@@ -1,4 +1,6 @@
 import Notiflix from "notiflix";
+import { refs } from "..";
+import { appendMarkup } from "./renderMarkupCards";
 const STORAGE_KEY_WATCH = 'save-watch';
 const STORAGE_KEY_QUEUE = 'save-queue';
 
@@ -13,9 +15,9 @@ const STORAGE_KEY_QUEUE = 'save-queue';
 //data-action="queue"
 //data-action="library"
 
-//const watchBtn = document.querySelector('button[data-action="watch"]');
-//const queueBtn = document.querySelector('button[data-action="queue"]');
-//const libraryBtn = document.querySelector('button[data-action="library"]');
+const watchBtn = document.querySelector('button[data-action="watch"]');
+const queueBtn = document.querySelector('button[data-action="queue"]');
+const libraryBtn = document.querySelector('button[data-action="library"]');
 
 
 const saveLocalStorageWatch = (event) => {
@@ -69,8 +71,9 @@ const saveLocalStorageQueue = (event) => {
 
 const renderFilmWatch = () => {
     //почистити контейнер
-    // container.innerHTML = '';
-    //
+
+    refs.filmCardsContainer.innerHTML = '';
+    
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
         appendMarkup(savedFilm);
@@ -81,8 +84,8 @@ const renderFilmWatch = () => {
 
 const renderFilmQueue = () => {
     //почистити контейнер
-    // container.innerHTML = '';
-    //
+    refs.filmCardsContainer.innerHTML = '';
+    
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
         appendMarkup(savedFilm);
@@ -91,16 +94,17 @@ const renderFilmQueue = () => {
     Notiflix.Notify.failure('Not Found saved Queue');
 };
 
- const renderFilmLibrary = () => {
+const renderFilmLibrary = () => {
+    refs.filmCardsContainer.innerHTML = ''; 
     let allFilms = [];
     const savedFilmWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
     const savedFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
+    
     if (savedFilmWatch && savedFilmQueue) {
-        allFilms.push(savedFilmQueue, savedFilmWatch);
-        console.log(students);
+        allFilms.push(...savedFilmQueue, ...savedFilmWatch);        
         let allIdFilms = allFilms.map(film => film.id)
         .filter((id, index, array) => array.indexOf(id) === index
-        );
+        );        
         let uniqueId = [];
         for (let i = 0; i < allIdFilms.length; i+=1) {
             newFilm = allFilms.find(options => options.id === allIdFilms[i]);
