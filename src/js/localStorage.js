@@ -57,8 +57,8 @@ const saveLocalStorageQueue = (event) => {
 };
 
 const renderFilmWatch = () => { 
-    refs.watchBtn.classList.add('.');
-    refs.queueBtn.classList.remove('.');
+    refs.watchBtn.classList.add('btn-current');
+    refs.queueBtn.classList.remove('btn-current');
     refs.filmCardsContainer.innerHTML = '';    
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
@@ -69,8 +69,8 @@ const renderFilmWatch = () => {
 };
 
 const renderFilmQueue = () => { 
-    refs.watchBtn.classList.remove('.');
-    refs.queueBtn.classList.add('.');
+    refs.watchBtn.classList.remove('btn-current');
+    refs.queueBtn.classList.add('btn-current');
     refs.filmCardsContainer.innerHTML = '';    
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         const savedFilm = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
@@ -81,8 +81,8 @@ const renderFilmQueue = () => {
 };
 
 const renderFilmLibrary = () => {
-    refs.watchBtn.classList.remove('.');
-    refs.queueBtn.classList.remove('.');
+    refs.watchBtn.classList.remove('btn-current');
+    refs.queueBtn.classList.remove('btn-current');
     refs.filmCardsContainer.innerHTML = ''; 
     let allFilms = [];
     const savedFilmWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
