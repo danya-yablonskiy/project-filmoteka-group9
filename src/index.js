@@ -8,6 +8,7 @@ import {
 import './js/header';
 import './js/header-modal';
 import './js/scrollUp';
+import './js/modal-team';
 
 const headerClass = document.querySelector('header');
 headerClass.classList.add('homePage');
