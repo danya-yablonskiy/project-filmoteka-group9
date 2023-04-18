@@ -20,7 +20,6 @@ export const refs = {
   watchBtn : document.querySelector('button[data-action="watch"]'),
   queueBtn : document.querySelector('button[data-action="queue"]'),
   libraryBtn: document.querySelector('button[data-action="library"]'),
-  
 };
 
 refs.filmCardsContainer.addEventListener('click', onFilmCardsContainerClick);
