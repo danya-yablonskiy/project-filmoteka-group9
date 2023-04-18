@@ -1,8 +1,12 @@
-body {
-    background-color: $bg-color;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  /* Щоб не було випадання */
+body {
+  background-color: $bg-color;
+}
+
+/* Щоб не було випадання */
 h1,
 h2,
 h3,
@@ -17,37 +21,36 @@ ul {
 
 /* Щоб не було зайвих відступів */
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 .list {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-  }
-
+  text-decoration: none;
+}
 
 .container {
-    min-width: 320px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 20px;
-  
-    @media screen and (min-width: 480px) {
-      width: 480px;
-    }
-  
-    @media screen and (min-width: 768px) {
-      width: 768px;
-      padding: 34px;
-    }
-  
-    @media screen and (min-width: 1280px) {
-      width: 1280px;
-      padding: 34px;
-    }
+  min-width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding: 34px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+    padding: 34px;
+  }
+}
