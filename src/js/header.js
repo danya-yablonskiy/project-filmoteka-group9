@@ -1,6 +1,6 @@
 import { clearMarkup } from './pagination';
-import { displayLoader }  from "./loader";
-import { hideLoader } from "./loader";
+// import { displayLoader }  from "./loader";
+// import { hideLoader } from "./loader";
 import renderFilmLibrary from './localStorage';
 
  
@@ -36,9 +36,9 @@ function onBtnLibraryClick(e) {
     logInBtn.classList.add('is-hidden');
     libraryBox.classList.remove('is-hidden');
 
-    // запустити лоадер
-    displayLoader();
-    hideLoader();
+    // // запустити лоадер
+    // displayLoader();
+    // hideLoader();
      
     // //запустити рендер функції локал сторейдж
     renderFilmLibrary();
