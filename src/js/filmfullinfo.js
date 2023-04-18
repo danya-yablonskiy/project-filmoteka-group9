@@ -188,7 +188,6 @@ function isAtWatched() {
 }
 
 function invertBtnTextWatched(e) {
-  console.log(e.currentTarget.textContent);
   if (e.currentTarget.textContent === 'Add to Watched') {
     e.currentTarget.textContent = 'Remove from Watched';
   } else {
@@ -197,7 +196,6 @@ function invertBtnTextWatched(e) {
 }
 
 function invertBtnTextQueue(e) {
-  console.log(e.currentTarget.textContent);
   if (e.currentTarget.textContent === 'Add to Queue') {
     e.currentTarget.textContent = 'Remove from Queue';
   } else {
