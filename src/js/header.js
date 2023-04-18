@@ -10,6 +10,7 @@ const btnHome = document.querySelector('.button-home');
 const btnLibrary = document.querySelector('.button-library');
 const logInBtn = document.querySelector('.login-button');
 const libraryBox = document.querySelector('.library-button-box');
+const paginationForRemove = document.querySelector('.tui-pagination');
 
 
 btnLibrary.addEventListener('click', onBtnLibraryClick);
@@ -20,6 +21,7 @@ libraryBox.classList.add('is-hidden');
 btnHome.classList.add('is-active');
  
  
+
 
    
 function onBtnLibraryClick(e) {       
@@ -36,6 +38,7 @@ function onBtnLibraryClick(e) {
      
      
     renderFilmLibrary();
+    paginationForRemove();
      
     
 }
@@ -50,5 +53,8 @@ function onBtnHomeClick(e) {
     libraryBox.classList.add('is-hidden');
 
     
+}
+function paginationRemove() {
+    paginationForRemove.innerHTML = '';
 }
  
