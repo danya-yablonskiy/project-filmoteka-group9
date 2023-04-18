@@ -128,6 +128,12 @@ function openFilmModal() {
   document
     .querySelector('.modal-film__btn--queue')
     .addEventListener('click', saveLocalStorageQueue);
+  document
+    .querySelector('.modal-film__btn--watch')
+    .addEventListener('click', invertBtnTextWatched);
+  document
+    .querySelector('.modal-film__btn--queue')
+    .addEventListener('click', invertBtnTextQueue);
 }
 
 export function closeFilmModal() {
@@ -178,5 +184,21 @@ function isAtWatched() {
     } else {
       return false;
     }
+  }
+}
+
+function invertBtnTextWatched(e) {
+  if (e.currentTarget.textContent === 'Add to Watched') {
+    e.currentTarget.textContent = 'Remove from Watched';
+  } else {
+    e.currentTarget.textContent = 'Add to Watched';
+  }
+}
+
+function invertBtnTextQueue(e) {
+  if (e.currentTarget.textContent === 'Add to Queue') {
+    e.currentTarget.textContent = 'Remove from Queue';
+  } else {
+    e.currentTarget.textContent = 'Add to Queue';
   }
 }
