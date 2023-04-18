@@ -1,8 +1,8 @@
 import fetchPopularMovies from './fetchPopularMovies';
 import fetchKeyword from './fetchKeyword';
 import { appendMarkup } from './renderMarkupCards';
-import Pagination from '../tui-pagination/dist/tui-pagination';
-import '../tui-pagination/dist/tui-pagination.css';
+// import Pagination from '../tui-pagination/dist/tui-pagination';
+// import '../tui-pagination/dist/tui-pagination.css';
 
 
 const headerClass = document.querySelector("header");
