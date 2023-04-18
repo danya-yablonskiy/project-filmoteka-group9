@@ -17,42 +17,43 @@
 }
 
 .tui-pagination {
-    height: 28px;
-    margin: 14px 0 12px;
-    line-height: normal;
+    height: 30px;
     text-align: center;
+    margin: 14px 0 12px;
     font-size: 0;
+    line-height: normal;
 }
 
 .tui-pagination .tui-page-btn {
-    display: inline-block;
-    position: relative;
-    width: 28px;
-    padding: 8px 0 6px;
-    margin-left: 0;
+    width: 40px;
     color: #333;
-    font-size: 12px;
-    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
+    border-width: 1px 0;
+    border-radius: 5px;
+    padding: 8px 0 6px;
+    font-size: 15px;
+    font-weight: 700;
     line-height: 1;
     text-decoration: none;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-    border-width: 1px 0;
+    display: inline-block;
+    position: relative;
 }
 
 .tui-pagination .tui-page-btn:hover {
-    background-color: #f4f4f4;
+    background-color: #FFFFFF;
+    scale: 1.1;
 }
 
 .tui-pagination .tui-is-selected, .tui-pagination strong {
     color: #fff;
-    background: #4b96e6;
-    border-color: #4b96e6;
+    background: #B92F2C;
+    border-color: #B92F2C;
     cursor: default;
 }
 
 .tui-pagination .tui-is-selected:hover {
-    background-color: #4b96e6;
+    background-color: #B92F2C;
 }
 
 .tui-pagination .tui-first-child.tui-is-selected, .tui-pagination strong.tui-first-child {
