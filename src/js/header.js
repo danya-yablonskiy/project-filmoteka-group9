@@ -38,7 +38,7 @@ function onBtnLibraryClick(e) {
      
      
     renderFilmLibrary();
-    paginationForRemove();
+    paginationRemove();
      
     
 }
