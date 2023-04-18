@@ -1,29 +1,36 @@
 (() => {
   const refs = {
-    openModalText: document.querySelectorAll("[data-modal-team-open]"),
-    closeModalBtn: document.querySelector("[data-modal-team-close]"),
-    modal: document.querySelector("[data-modal-team]"),
-     };
+    openModalText: document.querySelectorAll('[data-modal-team-open]'),
+    closeModalBtn: document.querySelector('[data-modal-team-close]'),
+    modal: document.querySelector('[data-modal-team]'),
+  };
 
-  refs.openModalText.forEach(txt=>txt.addEventListener("click", toggleModal));
-  refs.closeModalBtn.addEventListener("click", toggleModal);
-  refs.modal.addEventListener("click", onBackdropClick);
-  document.addEventListener('keydown', onEscButtonPress);
+  refs.openModalText.forEach(txt => txt.addEventListener('click', openModal));
+  refs.closeModalBtn.addEventListener('click', closeModal);
 
-  function toggleModal() {
-    document.body.classList.toggle("modal-open");
-    refs.modal.classList.toggle("is-hidden");
+  function openModal() {
+    document.body.classList.add('modal-open');
+    refs.modal.classList.remove('is-hidden');
+    document.addEventListener('keydown', onEscButtonPress);
+    refs.modal.addEventListener('click', onBackdropClick);
+  }
+
+  function closeModal() {
+    document.body.classList.remove('modal-open');
+    refs.modal.classList.add('is-hidden');
+    document.removeEventListener('keydown', onEscButtonPress);
+    refs.modal.removeEventListener('click', onBackdropClick);
   }
 
   function onEscButtonPress(e) {
     if (e.key === 'Escape') {
-      toggleModal();
+      closeModal();
     }
   }
-  
+
   function onBackdropClick(e) {
     if (e.currentTarget === e.target) {
-      toggleModal();
+      closeModal();
     }
   }
 })();
