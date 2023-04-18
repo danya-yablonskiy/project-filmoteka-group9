@@ -11,9 +11,6 @@ const btnLibrary = document.querySelector('.button-library');
 const logInBtn = document.querySelector('.login-button');
 const libraryBox = document.querySelector('.library-button-box');
 
- 
-
-
 
 btnLibrary.addEventListener('click', onBtnLibraryClick);
 btnHome.addEventListener('click', onBtnHomeClick);
