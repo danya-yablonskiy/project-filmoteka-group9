@@ -94,6 +94,10 @@
     line-height: 34px;
    border: none;
 }
+.btn-current{
+    background-color:$primary-red-color;
+    color: $primary-white-color;
+}
 .fa-search::before {
     content: "\f002";
 }
