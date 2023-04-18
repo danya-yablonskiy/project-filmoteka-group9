@@ -1,7 +1,7 @@
 import axios from "axios";
 import { pathParams } from "./options";
-import displayLoader  from "./loader";
-import hideLoader from "./loader";
+import { displayLoader }  from "./loader";
+import { hideLoader } from "./loader";
 
 export default async function fetchKeyword(name, page) {
   displayLoader();

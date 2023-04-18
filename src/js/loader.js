@@ -1,9 +1,9 @@
 const loader = document.querySelector('.loader');
 
-export default function displayLoader() {
+export function displayLoader() {
     loader.classList.add('display');
 }
 
-export default function hideLoader() {
+export function hideLoader() {
     loader.classList.remove('display');
 }
