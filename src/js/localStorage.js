@@ -1,8 +1,9 @@
 import Notiflix from "notiflix";
 import { refs } from "..";
 import { appendMarkup } from "./renderMarkupCards";
-const STORAGE_KEY_WATCH = 'save-watch';
-const STORAGE_KEY_QUEUE = 'save-queue';
+export const STORAGE_KEY_WATCH = 'save-watch';
+export const STORAGE_KEY_QUEUE = 'save-queue';
+Notiflix.Notify.init({ zindex: 9999, });
 
 const saveLocalStorageWatch = (event) => {
     const buttonEl = event.currentTarget;
@@ -18,7 +19,8 @@ const saveLocalStorageWatch = (event) => {
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         arrFilmsWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
         if (arrFilmsWatch.find(filmWatch => filmWatch.id === film.id)) {             
-            Notiflix.Notify.failure('Such a movie is already added to WATCH');
+            // Notiflix.Notify.failure('Such a movie is already added to WATCH');
+            deleteFilmInWatch(buttonEl.dataset.id);
             return;
         }
         arrFilmsWatch.push(film);
@@ -43,7 +45,8 @@ const saveLocalStorageQueue = (event) => {
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         arrFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
         if (arrFilmQueue.find(filmQueue => filmQueue.id === film.id)) {             
-            Notiflix.Notify.failure('Such a movie is already added to QUEUE');
+            // Notiflix.Notify.failure('Such a movie is already added to QUEUE');
+            deleteFilmInQueue(buttonEl.dataset.id);
             return;
         }
         arrFilmQueue.push(film);
@@ -115,31 +118,33 @@ const renderFilmLibrary = () => {
     
 const deleteFilmInWatch = (event) => {    
     let arrSevedFilms = [];
-    const buttonEl = event.currentTarget;
+    // const buttonEl = event.currentTarget;
     if (localStorage.getItem(STORAGE_KEY_WATCH)) {
         arrSevedFilms = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
-        const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);        
-        if (indexFilm < 0) {            
-            Notiflix.Notify.failure('There is no such film in WATCH');
-            return;
-        }
+        const indexFilm = arrSevedFilms.findIndex(film => film.id === event);        
+        // if (indexFilm < 0) {            
+        //     Notiflix.Notify.failure('There is no such film in WATCH');
+        //     return;
+        // }
         arrSevedFilms.splice(indexFilm, 1); 
-        localStorage.setItem(STORAGE_KEY_WATCH,JSON.stringify(arrSevedFilms));
+        localStorage.setItem(STORAGE_KEY_WATCH, JSON.stringify(arrSevedFilms));
+        Notiflix.Notify.info('Movie has been deleted from Watch')
     }
 } 
 
 const deleteFilmInQueue = (event) => {
     let arrSevedFilms = [];
-    const buttonEl = event.currentTarget;
+    // const buttonEl = event.currentTarget;
     if (localStorage.getItem(STORAGE_KEY_QUEUE)) {
         arrSevedFilms = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));
-        const indexFilm = arrSevedFilms.findIndex(film => film.id === buttonEl.dataset.id);        
-        if (indexFilm < 0) {
-            Notiflix.Notify.failure('There is no such film in QUEUE');
-            return;
-        }
+        const indexFilm = arrSevedFilms.findIndex(film => film.id === event);        
+        // if (indexFilm < 0) {
+        //     Notiflix.Notify.failure('There is no such film in QUEUE');
+        //     return;
+        // }
         arrSevedFilms.splice(indexFilm, 1); 
-        localStorage.setItem(STORAGE_KEY_QUEUE,JSON.stringify(arrSevedFilms));
+        localStorage.setItem(STORAGE_KEY_QUEUE, JSON.stringify(arrSevedFilms));
+        Notiflix.Notify.info('Movie has been deleted from Queue')
     }
 } 
 
