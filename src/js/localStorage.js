@@ -107,8 +107,9 @@ const renderFilmLibrary = () => {
         .filter((id, index, array) => array.indexOf(id) === index
         );        
         let uniqueId = [];
+        
         for (let i = 0; i < allIdFilms.length; i+=1) {
-            newFilm = allFilms.find(options => options.id === allIdFilms[i]);
+            const newFilm = allFilms.find(options => options.id === allIdFilms[i]);
             uniqueId.push(newFilm);
             
 }
