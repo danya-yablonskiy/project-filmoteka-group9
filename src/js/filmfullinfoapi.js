@@ -1,4 +1,5 @@
 import { pathParams } from './options';
+import { displayLoader, hideLoader } from './loader';
 
 export default class FilmInfoApiService {
   constructor() {
@@ -17,7 +18,7 @@ export default class FilmInfoApiService {
 
   fetchFilmTrailer() {
     const url = `${pathParams.BASE_URL}movie/${this.filmId}/videos?api_key=${pathParams.API_KEY}&language=en-US`;
-
+    displayLoader();
     return fetch(url)
       .then(response => response.json())
       .then(filmTrailer => {
