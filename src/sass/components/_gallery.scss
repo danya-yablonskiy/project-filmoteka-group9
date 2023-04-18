@@ -32,7 +32,6 @@
 
   &__film-card {
     cursor: pointer;
-    border-radius: 5px;
     padding-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -67,6 +66,7 @@
 }
 
 .card__image {
+  border-radius: 5px;
   min-width: 280px;
   width: 100%;
 
