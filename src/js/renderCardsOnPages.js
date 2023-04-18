@@ -4,16 +4,16 @@ import fetchPopularMovies from './fetchPopularMovies';
 import fetchKeyword from './fetchKeyword';
 import  createPagination  from './pagination';
 
-const headerClass = document.querySelector('header');
+
 
 export function onSearch(e) {
    
     e.preventDefault();
     const name = document.querySelector('.search-form__input').value;
-
+    const headerNewClass = document.querySelector('header');
     if (name !== '') {
-        headerClass.classList.remove("homePage");
-        headerClass.classList.add("keyword");    
+        headerNewClass.classList.remove("homePage");
+        headerNewClass.classList.add("keyword");    
 
     clearMarkup();
     
