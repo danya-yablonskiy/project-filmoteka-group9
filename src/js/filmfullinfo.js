@@ -1,35 +1,53 @@
 import FilmInfoApiService from './filmfullinfoapi';
 import { refs } from '../index';
 import { saveLocalStorageWatch, saveLocalStorageQueue } from './localStorage';
-
-// Проверка на то, что кликнули именно в картинку
-//  if (e.target.nodeName !== 'IMG') {
-//    return;
-//  }
+// import displayLoader from './loader';
+// import hideLoader from './loader';
 
 const filmInfoApiService = new FilmInfoApiService();
 
 export function onFilmCardsContainerClick(e) {
   e.preventDefault();
 
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+
   clearFilmModal();
   filmInfoApiService.film = e.target.dataset.filmid;
 
-  filmInfoApiService.fetchFilmInfo().then(filmData => {
-    customBackdrop(filmData);
-    refs.filmModal.insertAdjacentHTML(
-      'beforeend',
-      makeFilmModalMarkup(filmData)
-    );
-    openFilmModal();
-  });
+  // setTimeout(() => {
+  //   filmInfoApiService.fetchFilmInfo().then(filmData => {
+  //     customBackdrop(filmData);
+  //     refs.filmModal.insertAdjacentHTML(
+  //       'beforeend',
+  //       makeFilmModalMarkup(filmData)
+  //     );
+  //     openFilmModal();
+  //   });
+  // }, 2000);
 
-  filmInfoApiService.fetchFilmTrailer().then(filmTrailer => {
-    refs.trailerContainer.insertAdjacentHTML(
-      'beforeend',
-      makeFilmTrailerMarkup(filmTrailer.results[0].key)
-    );
-  });
+  filmInfoApiService
+    .fetchFilmInfo()
+    .then(filmData => {
+      customBackdrop(filmData);
+      refs.filmModal.insertAdjacentHTML(
+        'beforeend',
+        makeFilmModalMarkup(filmData)
+      );
+      openFilmModal();
+    })
+    .catch(error => console.log(error));
+
+  filmInfoApiService
+    .fetchFilmTrailer()
+    .then(filmTrailer => {
+      refs.trailerContainer.insertAdjacentHTML(
+        'beforeend',
+        makeFilmTrailerMarkup(filmTrailer.results[0].key)
+      );
+    })
+    .catch(error => console.log(error));
 }
 
 function makeFilmModalMarkup({
