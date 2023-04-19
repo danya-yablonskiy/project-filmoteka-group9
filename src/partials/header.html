@@ -77,6 +77,7 @@
             id="userEmail"
             name="email"
             class="header-modal__input"
+            required
           />
           <input
             type="password"
@@ -84,6 +85,8 @@
             id="userPassword"
             class="header-modal__input"
             name="password"
+            required
+            pattern="/^[a-zA-Z0-9!@#\$%\^\&*_=+-]{8,12}$/g"
           />
           <br /><br />
           <div class="header-modal__button-container">
