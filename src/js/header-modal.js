@@ -49,10 +49,8 @@ const userSignUp = async () => {
       Notiflix.Notify.success('Your account has been created!');
       btnLibrary.style.display = "block";
     })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      Notiflix.Notify.failure(errorCode + errorMessage);
+    .catch(() => {
+      Notiflix.Notify.failure('Enter correct data!');
     });
 };
 
@@ -67,9 +65,7 @@ const userSignIn = async () => {
       btnLibrary.style.display = "block";
     })
     .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-       Notiflix.Notify.failure(errorCode + errorMessage);
+       Notiflix.Notify.failure('A user with such data does not exist!');
     });
 };
 
