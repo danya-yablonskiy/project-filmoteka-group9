@@ -2,7 +2,7 @@
     position: relative;
     margin: 0 auto;
         width: 350px;
-        height: 500px;
+        height: 450px;
         overflow: hidden;
         background:$bg-color;
         border-radius: 10px;
@@ -21,6 +21,9 @@
     background-color: $bg-color;
     border:  none;
     cursor: pointer;
+    &:hover, &:focus{
+        fill: $primary-red-color;
+    }
 }
 .header-modal__label{
     color: $primary-black-color;
@@ -47,6 +50,7 @@
     width: 70%;
     background:$footer-color;
     color: $primary-black-color;
+    box-shadow: 4px 4px 11px 0px rgba(0, 0, 0, 0.75);
     
     display: flex;
     justify-content: center;
@@ -55,18 +59,22 @@
     outline: none;
     border-radius: 100px;
             
-   
-    margin: 20px auto;
+   &:not(:last-child){
+    margin-bottom: 30px;
+   }
+   margin-left: auto;
+   margin-right: auto;
+    
+
     padding: 20px;
 
     &:hover,:focus{
-        border: 2px solid black;
+        outline: 2px solid black;
     }
     
 }
 .header-modal__button-container{
     
-    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,6 +92,8 @@
         align-items: center;
         text-align: center;
         text-transform: uppercase;
+        position: relative;
+        
     
         border-radius: 100px;
         border: none;
@@ -94,14 +104,16 @@
     }
    background-color: $primary-red-color;
    color: $primary-white-color;
+   box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.52);
     
         &:hover,
         :focus {
             background-color: $primary-white-color;
             color: $primary-red-color;
-            border: 2px solid $primary-red-color;
+            outline: 2px solid $primary-red-color;
             transition: color 300ms;
         }
+         
 }
 
 
@@ -110,5 +122,14 @@
 }
 
 .header-modal__button--signOut{
-    margin: 0 auto;
-}
+    @media screen and (max-width: 767px) {
+            left: 1px;
+            top: 6px;
+    
+            padding: 8px 18px;
+    
+            font-size: 10px;
+            background-color: #a52927;;
+        }
+    }
+

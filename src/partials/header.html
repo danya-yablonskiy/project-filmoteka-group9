@@ -19,6 +19,13 @@
           <button type="button" class="button login-button button-box__item">
             Sign Up/Sign in
           </button>
+          <button
+            type="button"
+            id="signOutButton"
+            class="header-modal__button header-modal__button--signOut"
+          >
+            Sign Out
+          </button>
         </div>
         <form id="search-form" class="search-form">
           <div class="search-box">
@@ -48,35 +55,50 @@
         </button>
       </div>
     </div>
-    <div class="backdrop is-hidden" data-modal-header>
-      <div class="header-modal header-modal__form">
-        <button
-          class="header-modal__close"
-          type="button"
-          data-modal-header__close
-        >
-          <svg width="30" height="30">
-            <use href="./images/symbol-defs.svg#close-icon__desk"></use>
-          </svg>
-        </button>
-        <div class="header-modal__container">
-          <div id="authForm">
-            <h2 class="header-modal__label">Sign Up or Sign In</h2>
-            <input type="email" placeholder="email" id="userEmail" name="email" class="header-modal__input">
-            <input type="password" placeholder="password" id="userPassword" class="header-modal__input" name="password"> <br><br>
-            <div class="header-modal__button-container">
-            <button id="signUpButton" class="header-modal__button">Sign Up</button>
-            <button id="signInButton"class="header-modal__button">Sign In</button>
-            </div>
-         </div>
+  </div>
 
-         <div id="secretContent">
-           <h3 class="header-modal__label">Welcome to your account!</h3>
-           <h1 class="header-modal__label">AUTHENTICATED</h1>
-          <button id="signOutButton" class="header-modal__button header-modal__button--signOut">Sign Out</button>
-    </div>
-            </div>
-          </form>
+  <div class="backdrop is-hidden" data-modal-header>
+    <div class="header-modal header-modal__form">
+      <button
+        class="header-modal__close"
+        type="button"
+        data-modal-header__close
+      >
+        <svg width="30" height="30">
+          <use href="./images/symbol-defs.svg#close-icon__desk"></use>
+        </svg>
+      </button>
+      <div class="header-modal__container">
+        <div id="authForm">
+          <h2 class="header-modal__label">Sign Up or Sign In</h2>
+          <input
+            type="email"
+            placeholder="email"
+            id="userEmail"
+            name="email"
+            class="header-modal__input"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            id="userPassword"
+            class="header-modal__input"
+            name="password"
+          />
+          <br /><br />
+          <div class="header-modal__button-container">
+            <button id="signUpButton" class="header-modal__button">
+              Sign Up
+            </button>
+            <button id="signInButton" class="header-modal__button">
+              Sign In
+            </button>
+          </div>
+        </div>
+
+        <div id="secretContent">
+          <h3 class="header-modal__label">Welcome to your account!</h3>
+          <h1 class="header-modal__label">AUTHENTICATED</h1>
         </div>
       </div>
     </div>

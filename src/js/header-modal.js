@@ -31,8 +31,13 @@ const secretContent = document.querySelector('#secretContent');
 const signUpButton = document.querySelector('#signUpButton');
 const signInButton = document.querySelector('#signInButton');
 const signOutButton = document.querySelector('#signOutButton');
+const btnLibrary = document.querySelector('.button-library');
+const loginBtn = document.querySelector('.login-button');
 
 secretContent.style.display = 'none';
+btnLibrary.style.display = "none";
+loginBtn.style.display = 'block';
+signOutButton.style.display = 'none';
 
 const userSignUp = async () => {
   const signUpEmail = userEmail.value;
@@ -41,7 +46,8 @@ const userSignUp = async () => {
     .then(userCredential => {
       const user = userCredential.user;
       console.log(user);
-       Notiflix.Notify.success('Your account has been created!');
+      Notiflix.Notify.success('Your account has been created!');
+      btnLibrary.style.display = "block";
     })
     .catch(error => {
       const errorCode = error.code;
@@ -57,7 +63,8 @@ const userSignIn = async () => {
     .then(userCredential => {
         const user = userCredential.user;
         console.log(user);
-       Notiflix.Notify.success('You have signed in successfully!');
+      Notiflix.Notify.success('You have signed in successfully!');
+      btnLibrary.style.display = "block";
     })
     .catch(error => {
       const errorCode = error.code;
@@ -69,9 +76,14 @@ const userSignIn = async () => {
 const checkAuthState = async () => {
   onAuthStateChanged(authFn, user => {
     if (user) {
+      loginBtn.style.display = 'none';
+      signOutButton.style.display = 'block';
+      btnLibrary.style.display = "block";
       authForm.style.display = 'none';
       secretContent.style.display = 'block';
+      
     } else {
+
       authForm.style.display = 'block';
       secretContent.style.display = 'none';
     }
@@ -80,6 +92,9 @@ const checkAuthState = async () => {
 
 const userSignOut = async () => {
   await signOut(authFn);
+  setTimeout(() => document.location.reload(), 550);
+  
+  
 };
 
 checkAuthState();
