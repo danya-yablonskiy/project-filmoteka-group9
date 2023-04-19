@@ -22,7 +22,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const authFn = getAuth(app);
+export const authFn = getAuth(app);
 
 const userEmail = document.querySelector('#userEmail');
 const userPassword = document.querySelector('#userPassword');

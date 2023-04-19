@@ -9,6 +9,8 @@ import {
   renderFilmQueue,
 } from './localStorage';
 import { displayLoader, hideLoader } from './loader';
+import { onAuthStateChanged } from 'firebase/auth';
+import { authFn } from './header-modal';
 
 const filmInfoApiService = new FilmInfoApiService();
 
@@ -136,6 +138,14 @@ function openFilmModal() {
   document
     .querySelector('.modal-film__btn--queue')
     .addEventListener('click', invertBtnTextQueue);
+
+  onAuthStateChanged(authFn, user => {
+    if (user) {
+      document.querySelector('.modal-film__btns').classList.remove('is-hidden');
+    } else {
+      document.querySelector('.modal-film__btns').classList.add('is-hidden');
+    }
+  });
 }
 
 export function closeFilmModal() {
