@@ -5,6 +5,8 @@ import {
   saveLocalStorageQueue,
   STORAGE_KEY_WATCH,
   STORAGE_KEY_QUEUE,
+  renderFilmWatch,
+  renderFilmQueue,
 } from './localStorage';
 import { displayLoader, hideLoader } from './loader';
 
@@ -107,7 +109,7 @@ function makeFilmModalMarkup({
 }
 
 function makeFilmTrailerMarkup(trailerLink) {
-  return `<iframe class="modal-film__trailer" src="https://www.youtube.com/embed/${trailerLink}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  return `<iframe class="modal-film__trailer" src="https://www.youtube.com/embed/${trailerLink}?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 }
 
 function clearFilmModal() {
@@ -141,6 +143,7 @@ export function closeFilmModal() {
   document.body.classList.remove('modal-film-open');
   document.removeEventListener('keydown', onEscButtonPress);
   refs.filmModalBackdrop.removeEventListener('click', onBackdropClick);
+  clearFilmModal();
 }
 
 function onEscButtonPress(e) {
@@ -192,6 +195,7 @@ function invertBtnTextWatched(e) {
     e.currentTarget.textContent = 'Remove from Watched';
   } else {
     e.currentTarget.textContent = 'Add to Watched';
+    renderFilmWatch();
   }
 }
 
@@ -200,5 +204,6 @@ function invertBtnTextQueue(e) {
     e.currentTarget.textContent = 'Remove from Queue';
   } else {
     e.currentTarget.textContent = 'Add to Queue';
+    renderFilmQueue();
   }
 }
