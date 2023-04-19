@@ -21,7 +21,7 @@ export function onSearch(e) {
     fetchKeyword(name, 1).then(data => {
         const { results } = data;
         if (data.results.length < 1) {
-            Notiflix.Notify.failure("Sorry, we can't find this movie, try another movie name!")
+            Notiflix.Notify.failure("Search result not successful. Enter the correct movie name.!")
             fetchPopularMovies(1).then(data => appendMarkup(data.results));
             return;
         }

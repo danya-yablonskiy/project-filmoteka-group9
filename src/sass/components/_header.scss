@@ -106,9 +106,10 @@
     font-size: 12px;
     line-height: 1.2;
 
-    &:hover,:focus{
-        border: 2px solid black;
-        transition: border 300ms;
+    &:hover, &:focus{
+        outline: 2px solid black;
+        transition: outline 50ms;
+        box-shadow: 4px 4px 11px 0px rgba(0, 0, 0, 0.75);
     }
     @media screen and (min-width:768px) {
         margin-left: 0;

@@ -13,6 +13,7 @@
         text-transform: uppercase;
     
         color: $primary-black-color;
+        box-shadow: 4px 4px 11px 0px rgba(0, 0, 0, 0.75);
         
         background: $primary-white-color;
         border-radius: 100px;
@@ -22,7 +23,7 @@
         @media screen and (min-width:768px) {
             padding: 12px 22px;
         }
-        @media screen and (min-width:1200px) {
+        @media screen and (min-width:1280px) {
             padding: 14px 24px;
                 }
         &__library{
@@ -40,7 +41,7 @@
                     }
                 
             
-            @media screen and (min-width:1200px) {
+            @media screen and (min-width:1280px) {
                 margin-left: 8px;
                             }
                         }
@@ -93,12 +94,13 @@
 .fa-search::before {
     content: "\f002";
 }
-.library-button-box{
+.library-button-box {
     display: flex;
     
 @media screen and (max-width:767px) {
     justify-content: center;
         padding-bottom: 24px;
+        
 }
 @media  screen and (min-width:768px) {
     flex-direction: row-reverse;
@@ -106,7 +108,8 @@
     top:16px;
     right: 16px;
 }
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1280px) {
     right: 32px;
 }
 }
+
