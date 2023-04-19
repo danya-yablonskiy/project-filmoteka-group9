@@ -17,7 +17,7 @@
             My library
           </button>
           <button type="button" class="button login-button button-box__item">
-            Log In/Sign Up
+            Sign Up/Sign in
           </button>
         </div>
         <form id="search-form" class="search-form">
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="backdrop is-hidden" data-modal-header>
-      <div class="header-modal">
+      <div class="header-modal header-modal__form">
         <button
           class="header-modal__close"
           type="button"
@@ -60,27 +60,21 @@
           </svg>
         </button>
         <div class="header-modal__container">
-          <form id="header-modal__form">
-            <label for="" class="header-modal__label">Log In/Sign Up</label>
-            <input
-              id="form-mail"
-              class="header-modal__input"
-              type="email"
-              name="email"
-              placeholder="Email"
-              required="required"
-            />
-            <input
-              id="form-pass"
-              class="header-modal__input"
-              type="password"
-              name="password"
-              placeholder="Password"
-              required="required"
-            />
+          <div id="authForm">
+            <h2 class="header-modal__label">Sign Up or Sign In</h2>
+            <input type="email" placeholder="email" id="userEmail" name="email" class="header-modal__input">
+            <input type="password" placeholder="password" id="userPassword" class="header-modal__input" name="password"> <br><br>
             <div class="header-modal__button-container">
-              <button class="header-modal__button">Log In</button>
-              <button class="header-modal__button">Sign Up</button>
+            <button id="signUpButton" class="header-modal__button">Sign Up</button>
+            <button id="signInButton"class="header-modal__button">Sign In</button>
+            </div>
+         </div>
+
+         <div id="secretContent">
+           <h3 class="header-modal__label">Welcome to your account!</h3>
+           <h1 class="header-modal__label">AUTHENTICATED</h1>
+          <button id="signOutButton" class="header-modal__button header-modal__button--signOut">Sign Out</button>
+    </div>
             </div>
           </form>
         </div>
