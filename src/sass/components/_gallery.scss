@@ -95,6 +95,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding-left: 5px;
+  padding-right: 5px;
 
   color: $primary-black-color;
 
@@ -112,6 +114,9 @@
   font-weight: 500;
   line-height: 1.33;
   color: $primary-red-color;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 
   @media screen and (min-width: 1280px) {
     font-size: 20px;
