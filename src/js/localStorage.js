@@ -84,7 +84,13 @@ const renderFilmLibrary = () => {
     refs.watchBtn.classList.remove('btn-current');
     refs.queueBtn.classList.remove('btn-current');
     refs.filmCardsContainer.innerHTML = ''; 
-    let allFilms = [];
+    let allFilms = [];   
+    if (!localStorage.getItem(STORAGE_KEY_WATCH)) {
+      localStorage.setItem(STORAGE_KEY_WATCH,JSON.stringify(allFilms))  
+    }
+    if (!localStorage.getItem(STORAGE_KEY_QUEUE)) {
+      localStorage.setItem(STORAGE_KEY_QUEUE,JSON.stringify(allFilms))  
+    }
     const savedFilmWatch = JSON.parse(localStorage.getItem(STORAGE_KEY_WATCH));
     const savedFilmQueue = JSON.parse(localStorage.getItem(STORAGE_KEY_QUEUE));       
     if (savedFilmWatch.length > 0 && savedFilmQueue.length > 0) {        
